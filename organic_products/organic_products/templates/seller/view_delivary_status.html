@@ -1,0 +1,37 @@
+{% extends"seller/seller_index.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/seller_view_delivary_status_search">
+  <table class="table table-striped">
+    <tr>
+      <td colspan="3">Date from      
+
+      <input type="date" name="textfield" id="textfield" class="form-control" required/></td>
+      <td colspan="2">To
+
+      <input type="date" name="textfield2" id="textfield2"  class="form-control" required/></td>
+      <td colspan="2"><input type="submit" name="button" id="button" value="View" class="btn btn-info" required /></td>
+    </tr>
+  </table>
+<table class="table">
+    <tr>
+      <th >S/no</th>
+        <th>Date</th>
+      <th><p>customer information</p></th>
+      <th>Delivary boy informations</th>
+      <th>Total</th>
+      <th>Delivery status &nbsp;</th>
+    </tr>
+       {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+        <td>{{ i['cname'] }}<br>{{ i['cplace'] }}<br>{{ i['cpost'] }}<br>{{ i['cpin'] }}&nbsp;</td>
+        <td>{{ i['name'] }}<br>{{ i['place'] }}<br>{{ i['post'] }}<br>{{ i['pin'] }}&nbsp;</td>
+      <td>{{ i['total'] }}&nbsp;</td>
+      <td>{{ i['a_status'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

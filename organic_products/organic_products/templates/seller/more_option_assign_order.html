@@ -1,0 +1,57 @@
+{% extends"seller/seller_index.html" %}
+{% block body %}
+<form action="/seller_assigning_order" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table">
+    <tr>
+      <td height="47" colspan="4"><label for="textfield"></label>
+        <table width="279" border="1">
+
+          <tr>
+            <td>customert name</td>
+            <td>&nbsp;{{ data2['name'] }}</td>
+          </tr>
+          <tr>
+            <td>contact</td>
+            <td>{{ data2['conatct'] }}&nbsp;</td>
+          </tr>
+          <tr>
+            <td>email</td>
+            <td>{{ data2['email'] }}&nbsp;</td>
+          </tr>
+      </table>        <label for="fileField"></label></td>
+    </tr>
+    <tr>
+      <th>#</th>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  {% for i in data3 %}
+    <tr>
+      <td width="14">&nbsp;{{ loop.index }}</td>
+      <td width="16">&nbsp;{{ i['product_name'] }}</td>
+      <td width="34">{{ i['qqty'] }}&nbsp;</td>
+      <td width="70">{{ i['amount'] }}&nbsp;</td>
+    </tr>
+  {% endfor %}
+    <tr>
+      <td colspan="3"> <div align="right">Total</div></td>
+      <td>{{ data2['total'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="3"><div align="right">delivary boy</div></td>
+      <td><label for="select2"></label>
+        <select name="select" id="select2">
+            {% for i in data %}
+            <option value="{{ i['login_id'] }}">{{ i['name'] }}</option>
+            {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <td colspan="4"><div align="center">
+        <input type="submit" name="button" id="button" value="Assign" align="left" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

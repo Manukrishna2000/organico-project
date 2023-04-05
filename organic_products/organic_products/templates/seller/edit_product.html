@@ -1,0 +1,42 @@
+{% extends"seller/seller_index.html" %}
+{% block body %}
+<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="/seller_edit_product_post">
+<input type="hidden" name="pid" value="{{ data['product_id'] }}">
+  <table class="table">
+    <tr>
+      <td width="40">Product name</td>
+      <td width="315"><label for="textfield"></label>
+      <input type="text" name="textfield" value="{{ data['product_name'] }}" id="textfield" class="form-control"  required/></td>
+    </tr>
+    <tr>
+      <td>Category</td>
+      <td><label for="select"></label>
+        <select name="select" id="select" class="form-control" >
+            {% for i in data1 %}
+            <option value="{{ i['cat_name'] }}">{{ i['cat_name'] }}</option>
+            {% endfor %}
+      </select></td>
+    </tr>
+       <tr>
+      <td>Quantity</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" value="{{ data['quantity'] }}" id="textfield2" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield3" value="{{ data['price'] }}" id="textfield2" class="form-control" required /></td>
+    </tr>
+       <tr>
+      <td>photo</td>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control" required  /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="update"  class="btn btn-success" required/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.organic_app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="ORGANICO"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Customer_profile"></activity>
+        <activity android:name=".Deliveryboy_change_assword" />
+        <activity android:name=".Rating_review" />
+        <activity android:name=".View_my_orders" />
+        <activity android:name=".View_cart" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".Signup" />
+        <activity android:name=".VIEWPROFILE" />
+        <activity
+            android:name=".Delivery_homr"
+            android:label="Welcome"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Customer_home"
+            android:label="Welcome"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".View_sellers" />
+        <activity android:name=".View_items" />
+        <activity android:name=".Cart_add" />
+        <activity android:name=".Payment" />
+        <activity android:name=".Viewcartitems" />
+        <activity android:name=".delivery_view_assigned_parcels" />
+        <activity android:name=".delivery_viewparcels_to_delivery" />
+    </application>
+
+</manifest>

@@ -1,0 +1,56 @@
+{% extends"seller/seller_index.html" %}
+{% block body %}
+<form action="/seller_registration_post" method="post" enctype="multipart/form-data"><table width="200" border="1">
+  <tr>
+    <td>Name</td>
+    <td><label for="textfield2"></label>
+      <input type="text" name="textfield" id="textfield2"  class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield2" id="textfield3" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Pin</td>
+    <td><label for="textfield4"></label>
+      <input type="text" name="textfield3" id="textfield4" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Post</td>
+    <td><label for="textfield5"></label>
+      <input type="text" name="textfield4" id="textfield5" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td><label for="textfield6"></label>
+      <input type="text" name="textfield5" id="textfield6" class="form-control"required /></td>
+  </tr>
+  <tr>
+    <td>Image</td>
+    <td><label for="textfield7"></label>
+      <input type="file" name="textfield6" id="textfield7" class="form-control"  required/></td>
+  </tr>
+      <tr>
+    <td>email</td>
+    <td><label for="textfield8"></label>
+      <input type="text" name="textfield7" id="textfield6" class="form-control" required/></td>
+  </tr>
+      <tr>
+    <td>Pasword</td>
+    <td><label for="textfield9"></label>
+      <input type="text" name="textfield8" id="textfield6"  class="form-control" required/></td>
+  </tr>
+      <tr>
+    <td>confirm pasword</td>
+    <td><label for="textfield10"></label>
+      <input type="text" name="textfield9" id="textfield6"  class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="center">
+      <input type="submit" name="button" id="button" value="Submit" class="btn btn-success" required />
+    </div></td>
+    </tr>
+</table>
+</form>
+{% endblock %}

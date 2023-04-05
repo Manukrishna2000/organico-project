@@ -1,0 +1,26 @@
+{% extends"seller/seller_index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table">
+    <tr>
+      <th width="25">s/no</th>
+      <th width="25">Name</th>
+      <th width="48"><p>Contact number</p></th>
+        <th>Email</th>
+      <th width="47">location</th>
+      <th colspan="2">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{loop.index }}&nbsp;</td>
+      <td>{{ i['name'] }}&nbsp;</td>
+      <td>&nbsp;{{ i['contact_number'] }}&nbsp;</td>
+        <td>{{ i['email'] }}</td>
+      <td>&nbsp;{{ i['place'] }}<br/>{{ i['post'] }}<br/>{{ i['pin'] }}<br/>{{ i['photo'] }}&nbsp;</td>
+      <td width="22"><a href="/seller_delivary_boy_edit_profile/{{ i['delivery_boy_id'] }}" class="btn btn-primary">edit</a></td>
+      <td width="99"><a href="/seller_delivary_boy_delete/{{ i['delivery_boy_id'] }}" class="btn btn-danger">delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

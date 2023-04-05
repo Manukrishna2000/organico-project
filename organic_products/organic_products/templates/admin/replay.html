@@ -1,0 +1,18 @@
+{% extends"admin/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/admin_add_replay_post">
+  <table class="table">
+    <tr>
+      <th>replay</th>
+      <th><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" class="form-control" /></th>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="send" class="btn btn-primary" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
+

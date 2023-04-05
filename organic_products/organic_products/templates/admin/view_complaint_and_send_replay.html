@@ -1,0 +1,26 @@
+{% extends"admin/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="view complaints and send reply">
+  <table class="table">
+    <tr>
+      <th>slno.</th>
+      <th>username</th>
+      <th>complaints</th>
+      <th>date</th>
+      <th>status</th>
+      <th>&nbsp;</th>
+    </tr>&nbsp;
+      {% for i in data %}
+    <tr>
+        <td>{{ loop.index }}&nbsp;</td>
+        <td>{{ i['name'] }}</td>
+        <td>{{ i['complaint'] }}</td>
+        <td>{{ i['date'] }}</td>
+        <td>{{ i['status'] }}&nbsp;</td>
+        <td>{% if i['status']=='pending' %}<a href="/admin_sending_replay_post/{{ i['complaint_id'] }}" class="btn btn-info">reply</a>{% else %}replied{% endif %}</td>
+    </tr>
+      {% endfor %}
+
+  </table>
+</form>
+{% endblock %}

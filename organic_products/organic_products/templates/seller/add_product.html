@@ -1,0 +1,41 @@
+{% extends"seller/seller_index.html" %}
+{% block body %}
+<form action="/seller_add_product_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table" >
+    <tr>
+      <td>Product name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield"  class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>category</td>
+      <td><label for="select"></label>
+        <select name="select" id="select"  class="form-control" >
+            {% for i in r %}
+            <option value="{{ i['cat_name'] }}">{{ i['cat_name'] }}</option>{% endfor %}
+      </select></td>
+    </tr>
+       <tr>
+      <td>Quantity</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2"  class="form-control"  required /></td>
+    </tr>
+    <tr>
+      <td>price</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield3" id="textfield3"   class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td>photo</td>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField"  class="form-control"  required/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <strong>
+        <input type="submit" name="button" id="button"  value="Add"  class="btn btn-success"/>
+      </strong></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

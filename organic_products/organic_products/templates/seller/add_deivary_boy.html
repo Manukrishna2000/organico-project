@@ -1,0 +1,47 @@
+{% extends"seller/seller_index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/seller_add_delivary_boy_post">
+  <table class="table">
+    <tr>
+      <td width="45">Name</td>
+      <td width="237"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Pin code</td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4"  class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Contact number</td>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" class="form-control"/></td>
+    </tr>
+      <tr>
+      <td> City</td>
+      <td><label for="textfield6" ></label>
+      <input type="text" name="textfield6" id="textfield6" class="form-control" /></td>
+    </tr>
+      <tr>
+      <td>Email</td>
+      <td>
+      <input type="text" name="textfield7" id="textfield7" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Add" class=" btn btn-success" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

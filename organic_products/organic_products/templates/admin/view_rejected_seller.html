@@ -1,0 +1,30 @@
+{% extends"admin/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/admin_add_view_rejected_seller_post">
+  <table class="pull-right">
+    <tr>
+      <td colspan="4">
+      <input type="text" name="textfield" id="textfield"  class="form-control" placeholder="Search" /></td>
+      <td><input type="submit" name="button" id="button" value="search"  class="btn btn-info"  /></td>
+    </tr>
+  </table>
+</form>
+<table class="table table-striped">
+    <tr>
+      <th>s/no</th>
+      <th>name</th>
+      <th>phone</th>
+      <th>email</th>
+      <th>adress</th>
+    </tr>
+            {% for i in f%}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td><p><img src="{{ i['sel_image'] }}" width="100" height="100"></p>&nbsp;{{ i['sel_name']}}</td>
+      <td>{{ i['sel_phn'] }}</td>
+      <td>{{ i['sel_email'] }}</td>
+      <td>{{ i['sel_place'] }}&nbsp;{{ i['sel_post'] }}&nbsp;{{ i['sel_pin'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+{% endblock %}

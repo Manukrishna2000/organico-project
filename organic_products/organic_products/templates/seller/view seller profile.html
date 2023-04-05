@@ -1,0 +1,36 @@
+
+{% extends"seller/seller_index.html" %}
+{% block body %}
+
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-striped">
+    <tr>
+      <td colspan="2"><img src="{{ data["sel_image"] }}" alt="img" height="100" width="100"/></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>{{ data["sel_name"] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Place</td>
+       <td>{{ data["sel_place"] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+       <td>{{ data["sel_pin"] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Post</td>
+       <td>{{ data["sel_post"] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+       <td>{{ data["sel_phn"] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

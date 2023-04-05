@@ -1,0 +1,44 @@
+{% extends"seller/seller_index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/seller_delivary_boy_update">
+    <input type="hidden" value="{{ data['delivery_boy_id'] }}" name="did">
+  <table class="table">
+    <tr>
+      <td width="45">Name</td>
+      <td width="217"><label for="textfield" ></label>
+      <input type="text" name="textfield"  value="{{ data['name'] }}" id="textfield"  class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2"  value="{{ data['place'] }}"id="textfield2"  class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3"  value="{{ data['post'] }}" id="textfield3" class="form-control" required /></td>
+    </tr>
+
+       <tr>
+      <td>City</td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield6"  value="{{ data['city'] }}" id="textfield3" class="form-control"required /></td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4"  value="{{ data['pin'] }}" id="textfield4" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>contact number</td>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5"  value="{{ data['contact_number'] }}" id="textfield5" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="Update" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

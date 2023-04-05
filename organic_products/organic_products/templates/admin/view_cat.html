@@ -1,0 +1,33 @@
+{% extends"admin/index.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/admin_add_view_post">
+  <table class="pull-right">
+      <tr><H1>VIEW CATEGORY</H1></tr>
+    <tr>
+      <td colspan="4">
+
+          <input type="text" name="textfield" id="textfield" class="form-control"  placeholder="Search"/></td><td>
+        <input type="submit" name="button" id="button" value="search" class="btn btn-info" /></td>
+    </tr>
+  </table>
+</form>
+<table class="table table-striped">
+    <tr>
+      <th>sino</th>
+      <th>category</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+     
+    </tr>
+      {% for i in f %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['cat_name'] }}</td>
+      <td><a href="/admin_add_edit_cat/{{ i['cat_id'] }}" class="btn btn-primary">Edit</a></td>
+      <td><a href="/admin_del_cat/{{ i['cat_id'] }}" class="btn btn-danger">delete</a></td>
+      
+    </tr>
+      {% endfor %}
+  </table>
+
+{% endblock %}

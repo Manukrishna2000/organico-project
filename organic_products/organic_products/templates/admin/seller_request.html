@@ -1,0 +1,37 @@
+{% extends"admin/index.html" %}
+{% block body %}
+    <form id="form1" name="form1" method="post" action="/admin_pending_seller_post_search">
+ <table class="pull-right">
+    <tr>
+      <td colspan="5">
+      <input type="text" name="textfield" id="textfield" class="form-control" placeholder="Search"/></td>
+      <td><input type="submit" name="button" id="button" value="search" class="btn btn-info"/></td>
+    </tr>
+</table>
+<br>
+
+<table class="table table-striped">
+    <tr>
+      <th>s/no.</th>
+      <th>name</th>
+      <th>phone</th>
+      <th>email</th>
+      <th colspan="2">address</th>
+        <td></td>
+    </tr>
+               {% for i in r %}
+
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>&nbsp;{{ i['sel_name' ]}}<img src="{{ i['sel_image'] }}" height="100px" width="100px"/></td>
+
+    <td>{{ i['sel_phn'] }}</td>
+    <td>{{ i['sel_email'] }}</td>
+        <td><p>{{ i['sel_place'] }}</p> {{ i['sel_post'] }}<p>{{ i['sel_pin'] }}&nbsp;</p></td>
+        <td><a href="/admin_add_view_more_sellers_approve_or_reject/{{ i['sel_id'] }}" class="btn btn-success">more</a></td>
+    </tr>
+
+{% endfor %}
+  </table>
+</form>
+{% endblock %}
